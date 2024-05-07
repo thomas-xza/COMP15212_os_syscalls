@@ -33,7 +33,16 @@ if (new_PID != 0)
   bytes_written = write(pipefd[1], message, strlen(message) + 1);
 			// The " + 1" is to include the string terminator
 
+  char buffer[20];
+
+  sleep(3);
+  
+  int bytes_read = read(pipefd[0], buffer, 20);// Read from pipe into "buffer"
+
+  printf("%s\n", buffer);
+  
   printf("Bytes written: %d\n", bytes_written);
+
   }
 
 else
@@ -45,6 +54,10 @@ else
   printf("    Child waiting for message\n");
 
   bytes_read = read(pipefd[0], buffer, 20);// Read from pipe into "buffer"
+  
+  char *message = "Holy f!";
+  
+  int bytes_written = write(pipefd[1], message, strlen(message) + 1);
 
   if (bytes_read == -1) printf("    Error: %d\n", errno);
   else                { printf("    Bytes read: %d\n", bytes_read);
