@@ -48,7 +48,7 @@ else if (new_PID != 0)
 
   printf("Parent - Data 1: private %d   shared %d\n", private, *p_shm);
 
-  sleep(1);				// Give child time to get ahead
+  sleep(10);				// Give child time to get ahead
 
   printf("Parent - Data 2: private %d   shared %d\n", private, *p_shm);
 

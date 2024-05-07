@@ -6,6 +6,7 @@
 //------------------------------------------------------------------------------
 // ** Code starts here **
 
+int
 main (int argc, char *argv[])	// The 'root' programme; execution start
 {
 char *pString;			// Create a pointer to a character
@@ -19,16 +20,17 @@ pString[3] = 'l';
 pString[4] = 'o';
 pString[5] = '\0';		// Remember a string terminator
 
+
+
+printf("before free %04X\n", &pString);	// Print the string + a line-feed
 printf("%s\n", pString);	// Print the string + a line-feed
-
-*(pString+1) = 'a';		// Another way of manipulating the address
-				//  and dereferencing the pointer
-
-printf("%s\n", pString);	// Print the string + a line-feed
-
 free(pString);			// Give the memory back
 
-exit(0);			// ... and relax.
+
+printf("after free %04X\n", &pString);	// Print the string + a line-feed
+printf("%s\n", pString);	// Print the string + a line-feed
+
+ exit(0);			// ... and relax.
 
 }
 

@@ -14,10 +14,11 @@ printf("My PID is %d\n", getpid()); // My Unix identity
 
 new_PID = fork();		// The call we are exercising
 
+ 
 printf("That call returned the value %d to process %d\n", new_PID, getpid());
 
 //    The statement below may be useful later
-//    if (new_PID == 0) execlp("./baby", "baby", (char*)NULL);
+   if (new_PID == 0) execlp("./baby", "baby", (char*)NULL);
 
 printf("Goodbye from %s with PID %d\n", argv[0], getpid());
 
