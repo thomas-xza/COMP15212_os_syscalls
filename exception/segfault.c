@@ -19,7 +19,7 @@ int *ptr;				//  and a pointer
 
 int main (int argc, char *argv[])	// The 'root' programme; execution start
 {
-  /*
+  
   // Set three fields in a predefined 'struct'
   sigaction_structure.sa_handler = &broken;	// Pointer to a -function-
   sigemptyset(&sigaction_structure.sa_mask);	// Call defines 'empty' field
@@ -27,7 +27,6 @@ int main (int argc, char *argv[])	// The 'root' programme; execution start
 
   // Link the structure to signal "SIGSEGV"
   sigaction(SIGSEGV, &sigaction_structure, NULL);	// Link
-  */
 
   num = 0x13579;				// A reminder about pointers
   ptr = &num;					// Point at the variable
